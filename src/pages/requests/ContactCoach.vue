@@ -1,5 +1,5 @@
 <template>
-  <form @submi.prevent="submitForm">
+  <form @submit.prevent="submitForm">
     <div class="form-contorl">
       <label for="email">Your e-mail</label>
       <input type="email" id="email" v-model.trim="email" />
@@ -38,9 +38,17 @@ export default {
         !this.email.includes('@') ||
         this.message === ''
       ) {
-        this.formIsValid = true;
+        this.formIsValid = false;
         return;
       }
+
+      this.$store.dispatch('requests/contactCoach', {
+        emai: this.email,
+        message: this.message,
+        coachId: this.$route.id,
+      });
+
+      this.$router.replace('/coaches');
     },
   },
 };
