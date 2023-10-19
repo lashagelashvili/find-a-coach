@@ -6,7 +6,7 @@
         type="text"
         id="firstname"
         v-model.trim="firstName.val"
-        @blur="clearValidity('firstname')"
+        @blur="clearValidity('firstName')"
       />
       <p v-if="!firstName.isValid">Firstname must not be empty</p>
     </div>
@@ -17,7 +17,7 @@
         type="text"
         id="lastname"
         v-model.trim="lastName.val"
-        @blur="clearValidity('lastname')"
+        @blur="clearValidity('lastName')"
       />
       <p v-if="!lastName.isValid">Lastname must not be empty</p>
     </div>
