@@ -13,7 +13,7 @@
         </li>
 
         <li v-if="isLoggedIn">
-          <router-link @click="logout">Logout</router-link>
+          <base-button @click="logout">Logout</base-button>
         </li>
       </ul>
     </nav>
